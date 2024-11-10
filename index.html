@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma rizz gyat</title>
+
+    <style>
+        .container {
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        p {
+            margin-top: -20px;
+        }
+
+        .nilai {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h4 {
+            padding: 10px;
+            margin-right: -95px;
+        }
+
+        #increment, #decrement {
+            margin: 15px 10px;
+            width: 50px;
+            height: 30px;
+            font-size: 15px;
+            background-color: tomato;
+            color: white;
+            border: none;
+            border-radius: 25px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Seberapa sigma kah kamu</h1>
+    <p>(tap counter doang bang)</p>
+    <div class="content">
+        <div class="nilai">
+            <h2 class="counter">0</h2>
+            <h4>nilai sigma</h4>
+        </div>
+        <div class="btn">
+            <button id="increment">+</button>
+            <button id="decrement">-</button>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        const counter = document.querySelector('.counter');
+        const increment = document.getElementById('increment');
+        const decrement = document.getElementById('decrement');
+
+        // increment.addEventListener('click', (e) => {
+        //     counter.innerText = parseInt(counter.innerText) +1;
+        // });
+        // decrement.addEventListener('click', () => {
+        //     counter.innerText = parseInt(counter.innerText) -1;
+        // });
+
+        // ini sama kayak diatas tapi manfaatin value dari event click
+        document.body.addEventListener('click', (e) => {
+            if(e.target == increment) {
+                // cara simple untuk hitung counter, tp ga bisa +2 dst
+                counter.innerText++;
+            } else if(e.target == decrement) {
+                // cara ribet itung counter, tp lebih aman karna string diubah ke int
+                counter.innerText = parseInt(counter.innerText) -1;
+            } else {
+                counter.innerText = "pencet tombol nya tolol";
+            }
+            if(counter.innerText == 'NaN') {
+                counter.innerText = "nah jadi rusak da sistemnya";
+            }
+        });
+
+
+    </script>
+</body>
+</html>
